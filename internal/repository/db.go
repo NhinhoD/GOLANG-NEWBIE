@@ -23,8 +23,12 @@ func ConnectDB() {
 	// 2. Lấy chuỗi kết nối
 	dsn := os.Getenv("DB_URL")
 
-	// 3. Mở kết nối đến Supabase (Postgres)
-	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	dbConfig := postgres.Config{
+		DSN:                  dsn,
+		PreferSimpleProtocol: true,
+	}
+
+	database, err := gorm.Open(postgres.New(dbConfig), &gorm.Config{})
 	if err != nil {
 		log.Fatal("Failed to connect to database:", err)
 	}
