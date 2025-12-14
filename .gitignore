@@ -1,0 +1,30 @@
+# --- File cấu hình bảo mật ---
+.env
+.env.local
+*.env
+
+# --- File chạy ---
+# Vì bạn dùng Windows nên file build ra sẽ có đuôi .exe
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Bỏ qua file main
+main
+test
+debug
+
+# --- Folder build  ---
+/bin/
+/dist/
+/build/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+
+# --- Hệ điều hành ---
+Thumbs.db
+.DS_Store
