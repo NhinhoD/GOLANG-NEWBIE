@@ -17,5 +17,14 @@ func main() {
 	})
 	// Định nghĩa route cho việc tạo short link
 	r.POST("/shorten", handler.CreateShortLink)
+	//
+	r.GET("/:code", handler.RedirectToOriginal)
+
+	// 3. Xem thông tin link
+	r.GET("/api/links/:code", handler.GetLinkInfo)
+
+	// 4. Xem danh sách tất cả link
+	r.GET("/api/links", handler.GetAllLinks)
+
 	r.Run(":8080")
 }

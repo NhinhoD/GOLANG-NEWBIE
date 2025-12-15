@@ -2,7 +2,7 @@ package model
 
 import "time"
 
-// Struct giống như Class trong C#
+// Struct giống bảng trong Database
 // `json:"..."` để map khi trả API
 // `gorm:"..."` để config DB (Primary Key, Index)
 type ShortLink struct {
